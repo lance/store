@@ -1,8 +1,9 @@
-|Microservice|Features Covered|Contents|
-|------------|----------------|-|
-|store-frontend|dockerfile build|angular app|
-|store-inventory|multi stage builds, FROM scratch,gitlab-ci,distributed databases|golang api,cockroach db, init containers|
-|store-products|s2i builds|nodejs api, mongodb,traffic split|
+|Microservice|Namespace|Features Covered|Contents|
+|------------|--|----------------|-|
+|store-frontend|store|dockerfile build|angular app|
+|store-inventory|fflmnt|multi stage builds, FROM scratch,gitlab-ci,distributed databases|golang api,cockroach db, init containers|
+|store-products|store|s2i builds|nodejs api, mongodb,traffic split|
+|store-recommendations|store|s2i builds|nodejs api, mongodb,traffic split|
 
 
 ## Store frontend
