@@ -14,8 +14,8 @@ kubectl run --image=debianmaster/store-recommendations:v1 recommendations -l app
 oc create service clusterip recommendations --tcp=80:8080 -n bi 
 
 oc project fflmnt
-kubectl run --image=debianmaster/store-inventory:v1 store-inventory -l app=inventory --dry-run -o yaml | istioctl kube-inject  -f - | oc apply -f -
+kubectl run --image=debianmaster/store-inventory:v1 inventory -l app=inventory --dry-run -o yaml | istioctl kube-inject  -f - | oc apply -f -
 
-oc env deploy products sql_string=postgresql://root@cockroachdb-public:26257/store?sslmode=disable   
+oc env deploy inventory sql_string=postgresql://root@cockroachdb-public:26257/store?sslmode=disable   
 oc create service clusterip inventory --tcp=80:8000 -n fflmnt 
 ```
