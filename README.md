@@ -4,6 +4,7 @@
 |store-inventory|fflmnt|multi stage builds, FROM scratch,gitlab-ci,distributed databases|golang api,cockroach db, init containers|
 |store-products|store|s2i builds, linking services|nodejs api, mongodb,traffic split|
 |store-recommendations|store|s2i builds|nodejs api, mongodb,traffic split|
+|store-orders|fflmnt|fabric8, ROAR, debug in IDE|springboot api|
 |All|all|network policies, microservice ops||
 
 
