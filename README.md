@@ -23,6 +23,7 @@ docker push debianmaster/store-fe:v1
 
 ### DB
 ```sh
+oc project store
 oc new-app mongodb -l app=mongodb --name=productsdb \
   -e MONGODB_ADMIN_PASSWORD=password  -e MONGODB_USER=app_user \
   -e MONGODB_DATABASE=store  -e MONGODB_PASSWORD=password
