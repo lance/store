@@ -6,6 +6,9 @@
 |store-recommendations|store|s2i builds|nodejs api, mongodb,traffic split|
 |All|all|network policies, microservice ops||
 
+
+![Microservice Application](https://docs.google.com/drawings/d/e/2PACX-1vQsnCcUr5jOkT1VSEhmhKVh7o0BpFzhIIr2gz28mmFKvAgDp-v6r4kjzPFriWT_rFiOoBkJkbpJ9nAg/pub?w=960&h=720)
+
 ## Bootstrap
 ```sh
 oc new-project fflmnt
