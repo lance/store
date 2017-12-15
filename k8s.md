@@ -2,6 +2,7 @@
 oc project store
 kubectl run --image=debianmaster/store-frontend:v1 store-frontend --dry-run -o yaml | istioctl kube-inject  -f - | oc apply -f -
 kubectl run --image=debianmaster/store-products:v1 products --dry-run -o yaml | istioctl kube-inject  -f - | oc apply -f -
+
 oc env deploy products MONGO_USER=app_user MONGO_PASSWORD=password MONGO_SERVER=productsdb MONGO_PORT=27017 MONGO_DB=store \
 mongo_url='mongodb://app_user:password@productsdb/store'
 
