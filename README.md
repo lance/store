@@ -5,7 +5,7 @@
 |store-products|store|s2i builds, linking services|nodejs api, mongodb,traffic split|
 |store-recommendations|store|s2i builds|nodejs api, mongodb,traffic split|
 |store-orders|fflmnt|springboot, fabric8, ROAR, debug in IDE|springboot api|
-|All|all|network policies, microservice ops||
+|All|all|network policies, microservice ops, cloud native||
 
 
 ![Microservice Application](https://docs.google.com/drawings/d/e/2PACX-1vQsnCcUr5jOkT1VSEhmhKVh7o0BpFzhIIr2gz28mmFKvAgDp-v6r4kjzPFriWT_rFiOoBkJkbpJ9nAg/pub?w=960&h=720)
