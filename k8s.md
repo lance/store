@@ -12,5 +12,5 @@ oc create service clusterip store-recommendations --tcp=80:8080 -n store
 oc project fflmnt
 kubectl run --image=debianmaster/store-inventory:v1 store-inventory --dry-run -o yaml | istioctl kube-inject  -f - | oc apply -f -
 
-oc create service clusterip store-inventory --tcp=80:8080 -n store 
+oc create service clusterip store-inventory --tcp=80:8000 -n store 
 ```
