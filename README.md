@@ -41,7 +41,9 @@ docker push debianmaster/store-products:v1
 git checkout recommendations
 s2i build . node:8-slim debianmaster/store-products:recommendations
 docker push debianmaster/store-products:recommendations
+
 oc new-app debianmaster/products:v1 --name=products
+
 oc env dc products MONGO_USER=app_user MONGO_PASSWORD=password MONGO_SERVER=productsdb MONGO_PORT=27017 MONGO_DB=store \
 mongo_url='mongodb://app_user:password@productsdb/store'
 ```
