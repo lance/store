@@ -36,8 +36,31 @@ mongo_url='mongodb://app_user:password@productsdb/store'
 ```
 
 ## Store inventory
+### API
 ```sh
 cd ~/store-inventory
 docker build -t debianmaster/store-inventory:v1 -f Dockerfile.scratch .
 docker push debianmaster/store-inventory:v1
 ```
+### DB
+```sh
+oc adm policy add-scc-to-user anyuid -z default
+oc apply -f https://raw.githubusercontent.com/cockroachdb/cockroach/master/cloud/kubernetes/cockroachdb-statefulset.yaml
+oc apply -f https://raw.githubusercontent.com/cockroachdb/cockroach/master/cloud/kubernetes/cluster-init.yaml
+oc expose svc  cockroachdb-public --port=8080 --name=r1
+oc scale statefulset cockroachdb --replicas=4
+oc run cockroachdb -it --image=cockroachdb/cockroach --rm --restart=Never     -- sql --insecure --host=cockroachdb-public
+```
+```sql
+create database store;
+use store;
+create table inventory (id int,product_id varchar(30),product_cost int,product_availabilty int,product_subcat int);
+insert into inventory values (1,'cable_1',10,200,1);
+```
+```sh
+oc new-app debianmaster/store-inventory:cockroach --name=inventory \
+-e sql_string=postgresql://root@cockroachdb-public:26257/store?sslmode=disable
+oc expose svc inventory
+```
+
+
