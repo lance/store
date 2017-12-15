@@ -69,5 +69,14 @@ docker build -t debianmaster/store-recommendations:v1 .
 docker push debianmaster/store-recommendations:v1
 ```
 
+## Istio
+```sh
+oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system
+oc adm policy add-scc-to-user anyuid -z default -n istio-system
+oc adm policy add-scc-to-user privileged -z default -n store
+oc adm policy add-scc-to-user privileged -z default -n fflmnt
+oc adm policy add-scc-to-user privileged -z default -n bi
+```
+
 
 
