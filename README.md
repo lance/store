@@ -70,12 +70,16 @@ docker push debianmaster/store-recommendations:v1
 ```
 
 ## Istio
+### Permissions
 ```sh
 oc adm policy add-scc-to-user anyuid -z istio-ingress-service-account -n istio-system
 oc adm policy add-scc-to-user anyuid -z default -n istio-system
 oc adm policy add-scc-to-user privileged -z default -n store
 oc adm policy add-scc-to-user privileged -z default -n fflmnt
 oc adm policy add-scc-to-user privileged -z default -n bi
+```
+```sh Istio setup
+oc apply -f ~/istio-workshop/istio/install/istio-0.3.0/install/kubernetes/istio.yaml
 ```
 
 
