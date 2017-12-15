@@ -62,7 +62,12 @@ oc new-app debianmaster/store-inventory:v1 --name=inventory \
 oc expose svc inventory
 ```
 
-
+## Store Recommendations
+```sh
+cd ~/store-recommendations
+docker build -t debianmaster/store-recommendations:v1 .
+docker push debianmaster/store-recommendations:v1
+```
 
 
 
