@@ -15,8 +15,14 @@ docker push debianmaster/store-fe:v1
 ## Store products
 ```sh
 cd ~/store-products
+
+git checkout master
 s2i build . node:8-slim debianmaster/store-products:v1
 docker push debianmaster/store-products:v1
+
+git checkout recommendations
+s2i build . node:8-slim debianmaster/store-products:recommendations
+docker push debianmaster/store-products:recommendations
 ```
 
 ## Store inventory
