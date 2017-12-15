@@ -6,6 +6,12 @@
 |store-recommendations|store|s2i builds|nodejs api, mongodb,traffic split|
 |All|all|network policies, microservice ops||
 
+## Bootstrap
+```sh
+oc new-project fflmnt
+oc new-project store
+oc new-project bi
+```
 ## Store frontend
 ```sh
 cd ~/store-frontend
