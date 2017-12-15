@@ -4,7 +4,7 @@
 |store-inventory|fflmnt|multi stage builds, FROM scratch,gitlab-ci,distributed databases|golang api,cockroach db, init containers|
 |store-products|store|s2i builds|nodejs api, mongodb,traffic split|
 |store-recommendations|store|s2i builds|nodejs api, mongodb,traffic split|
-|All|all|network policies||
+|All|all|network policies, microservice ops||
 
 ## Store frontend
 ```sh
