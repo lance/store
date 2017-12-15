@@ -9,11 +9,17 @@
 
 ![Microservice Application](https://docs.google.com/drawings/d/e/2PACX-1vQsnCcUr5jOkT1VSEhmhKVh7o0BpFzhIIr2gz28mmFKvAgDp-v6r4kjzPFriWT_rFiOoBkJkbpJ9nAg/pub?w=960&h=720)
 
+
 ## Bootstrap
 ```sh
 oc new-project fflmnt
 oc new-project store
 oc new-project bi
+cd ~
+git clone https://github.com/debianmaster/store-products
+git clone https://github.com/debianmaster/store-inventory
+git clone https://github.com/debianmaster/store-frontend
+git clone https://github.com/debianmaster/store-orders 
 ```
 ## Store frontend
 ```sh
