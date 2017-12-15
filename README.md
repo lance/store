@@ -89,6 +89,8 @@ oc project bi
 cd ~/store-recommendations
 docker build -t debianmaster/store-recommendations:v1 .
 docker push debianmaster/store-recommendations:v1
+
+oc new-app push debianmaster/store-recommendations:v1
 ```
 
 ## Istio
