@@ -104,6 +104,7 @@ oc adm policy add-scc-to-user privileged -z default -n bi
 ```
 ```sh Istio setup
 oc apply -f ~/istio-workshop/istio/install/istio-0.3.0/install/kubernetes/istio.yaml
+oc apply -f ~/istio-workshop/istio/install/istio-0.3.0/install/kubernetes/addons/
 ```
 
 
