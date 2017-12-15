@@ -4,6 +4,14 @@
 |store-inventory|multi stage builds, FROM scratch,gitlab-ci,distributed databases|golang api,cockroach db|
 |store-products|s2i builds|nodejs api, mongodb,traffic split|
 
+
+## Store frontend
+```sh
+cd ~/store-frontend
+docker build -t "debianmaster/store-fe:v1" .
+docker push debianmaster/store-fe:v1
+```
+
 ## Store products
 ```sh
 cd ~/store-products
