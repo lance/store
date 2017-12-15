@@ -20,10 +20,11 @@ docker push debianmaster/store-fe:v1
 ```
 
 ## Store products
-
-### DB
 ```sh
 oc project store
+```
+### DB
+```sh
 oc new-app mongodb -l app=mongodb --name=productsdb \
   -e MONGODB_ADMIN_PASSWORD=password  -e MONGODB_USER=app_user \
   -e MONGODB_DATABASE=store  -e MONGODB_PASSWORD=password
@@ -48,6 +49,9 @@ mongo_url='mongodb://app_user:password@productsdb/store'
 ```
 
 ## Store inventory
+```sh
+oc project fflmnt
+```
 ### DB
 ```sh
 oc adm policy add-scc-to-user anyuid -z default
@@ -74,6 +78,9 @@ oc expose svc inventory
 ```
 
 ## Store Recommendations
+```sh
+oc project bi
+```
 ```sh
 cd ~/store-recommendations
 docker build -t debianmaster/store-recommendations:v1 .
