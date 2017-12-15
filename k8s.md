@@ -7,6 +7,7 @@ oc env deploy products MONGO_USER=app_user MONGO_PASSWORD=password MONGO_SERVER=
 mongo_url='mongodb://app_user:password@productsdb/store'
 
 oc create service clusterip frontend --tcp=80:8080 -n store 
+oc create service clusterip products --tcp=80:8080 -n store 
 
 oc project bi
 kubectl run --image=debianmaster/store-recommendations:v1 recommendations -l app=recommendations --dry-run -o yaml | istioctl kube-inject  -f - | oc apply -f -
